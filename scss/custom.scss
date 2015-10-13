@@ -1,0 +1,359 @@
+/* CUSTOM SCSS STYLESHEET */
+/***********************
+    IMPORTED FONTS
+***********************/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/***********************
+    VARIABLES
+***********************/
+
+/* Gradient to and from colors */
+$from-color: #6f8f5d;
+$to-color: #a6c097;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Open Sans', sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+
+$font-family-base:        $font-family-sans-serif !default;
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+/***********************
+    MIXINS
+***********************/
+/* Gradient - Green */
+@mixin gradient($from-color, $to-color) {
+    background-color: mix($from-color, $to-color); /* Fallback */
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from-color), to($to-color));
+    background-image: -webkit-linear-gradient(top, $from-color, $to-color); 
+    background-image:    -moz-linear-gradient(top, $from-color, $to-color);
+    background-image:     -ms-linear-gradient(top, $from-color, $to-color);
+    background-image:      -o-linear-gradient(top, $from-color, $to-color);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', EndColorStr='#{$to-color}')";
+}
+
+/************************
+    DEFAULTS
+************************/
+body {
+    margin: 0 auto;
+    font-family: $font-family-sans-serif;
+    .wrapper {
+
+    }
+}
+/* Heading sizes */
+h1 {font-size: $font-size-h1;}
+h2 {font-size: $font-size-h2;}
+h3 {font-size: $font-size-h3;}
+h4 {font-size: $font-size-h4;}
+/***********************
+    NAVIGATION 
+***********************/
+nav {
+    display: none;
+}
+/***********************
+    HEADER
+***********************/  
+header {
+    width: 100%;
+    @include gradient ($from-color, $to-color);
+    margin: 0 auto;
+
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        .row {
+
+            .logo {
+                width: 42%;
+                float: left;
+
+                .companyName {
+                    display: none;   
+                }
+
+                img {
+                  width: 100%;  
+                }
+            }
+        }
+/***********************
+    NAVIGATION
+***********************/  
+        .dropdown {
+            background: #446332;
+             
+            .btn-primary {
+                width: 100%;
+                background: #446332;
+                border: none;
+            }
+
+            ul {
+                width: 100%;   
+            }    
+        }
+        .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+                background: #244412;
+            }
+        .banner {
+            display: none;   
+        }
+    }
+}
+
+/***********************
+    INFO BOXES
+***********************/
+.container {
+    
+    .row {
+    
+        .info-boxes {
+            padding: 0;
+            margin: 0 auto;
+            
+            img {
+                opacity: .9;
+                width: 100%;
+                &:hover {
+                    opacity: 1;   
+                }
+            }
+        }
+    }
+}
+/***********************
+    CONTENT
+***********************/
+main{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    
+        .container {
+            max-width: 1140px;
+            padding: 0 1em 1em;
+            margin: 0 auto;
+            
+            
+        .main-content {
+            padding-top: .5em;
+            padding-bottom: .5em;
+
+            p {
+                font-size: .8em;
+            }
+        }
+    }
+}
+.left {
+       
+}
+
+.right {
+    
+}
+
+/***********************
+    FOOTER
+***********************/
+footer {
+    background: $to-color;
+    padding: 1em 0;
+    
+    p {
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        font-size: $font-size-small;
+        
+        li {
+            float: left;
+            padding: .5em;
+            a {
+                color: #244412;
+                
+                &:hover {
+                    color: #244412;    
+                }
+            }
+        }
+    }
+    
+    .contact {
+        
+        .contact-heading {
+            font-size: $font-size-large;
+        }
+        p {
+            font-size: $font-size-base;
+            a {
+                color: #244412;
+                
+                &:hover {
+                    color: #244412;  
+                }
+            }
+        }
+    }
+    
+    .copyright {
+        padding: .5em 0;
+        border-top: 1px solid #88a776;
+        p {
+            text-align: center;
+            font-size: $font-size-small;
+            
+            a {
+                color: #244412;
+                
+                &:hover {
+                    color: #244412;  
+                }
+            }  
+        }
+    }
+}
+
+/***********************
+    MEDIA QUERIES
+***********************/
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+/* navigation */
+ nav {
+     display: block;
+     background: #446332;
+     border-bottom: 2px solid #244412;
+     
+    .container {
+         .row {
+
+              /* navigation */
+            #wrap {
+                height: 25px; 
+                margin: 0; /* Ensures there is no space between sides of the screen and the menu */
+                z-index: 99; /* Makes sure that your menu remains on top of other page elements */
+                position: relative; 
+                background-color: #446332;
+
+                    .navbar	{ /* ul element */
+                        height: 25px;
+                        padding: 0;
+                        margin: 0;
+                        position: absolute; /* Ensures that the menu doesn’t affect other elements */
+                        right: 0;
+                        li 	{
+                            height: auto;
+                            width: 90px;  /* Each menu item is 150px wide */
+                            float: left;  /* This lines up the menu items horizontally */
+                            text-align: center;  /* All text is placed in the center of the box */
+                            list-style: none;  /* Removes the default styling (bullets) for the list */
+                            font: normal bold 12px/1.2em Arial, Verdana, Helvetica;  
+                            padding: 0;
+                            margin: 0;
+                            background-color: #446332;
+
+                             ul {
+                                display: none;  /* Hides the drop-down menu */
+                                height: auto;									
+                                margin: 0; /* Aligns drop-down box underneath the menu item */
+                                padding: 0; /* Aligns drop-down box underneath the menu item */
+
+                                li {
+                                    background-color: #446332;
+
+                                    a {
+                                        border-left: 1px solid #446332; 
+                                        border-right: 1px solid #a5bf96; 
+                                        border-top: 1px solid #446332; 
+                                        border-bottom: 1px solid #a5bf96; 
+                                    }
+                                } 
+                            }  
+                        }
+
+                        li:hover ul 	{
+                            display: block; /* Displays the drop-down box when the menu item is hovered over */
+                        }
+
+                        a	{							
+                            padding: 5px 0;  /* Adds a padding on the top and bottom so the text appears centered vertically */
+                            border-left: 1px solid #446332; /* Creates a border in a slightly lighter shade of blue than the background.  Combined with the right border, this creates a nice effect. */
+                            border-right: 1px solid #a5bf96; /* Creates a border in a slightly darker shade of blue than the background.  Combined with the left border, this creates a nice effect. */
+                            text-decoration: none;  /* Removes the default hyperlink styling. */
+                            color: white; /* Text color is white */
+                            display: block;
+                        }
+
+                        li:hover, a:hover {
+                            background-color: #a5bf96;
+                            color: #244412;
+                        } 
+                    }
+                }
+            /* /navigation */
+         }
+     }
+ }
+    
+/* header */
+header {
+    
+    .container {
+        .row {
+            .logo {
+                    display: block;
+                    padding-bottom: .5em;
+                    .companyName {
+                        display: none;   
+                    }
+
+                    img {
+                      width: 75%;  
+                    }
+                }
+            }
+            .banner {
+                display: block;
+                padding: .1em;
+                border: 1px solid #446332;
+            }
+            
+            .dropdown {
+                display: none;   
+            }
+        }
+    }
+}
+
+/* Footer */
+footer {
+    
+}

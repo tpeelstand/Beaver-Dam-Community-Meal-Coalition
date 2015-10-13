@@ -1,0 +1,243 @@
+@charset "UTF-8";
+/* CUSTOM SCSS STYLESHEET */
+/***********************
+    IMPORTED FONTS
+***********************/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/***********************
+    VARIABLES
+***********************/
+/* Gradient to and from colors */
+/***********************
+    MIXINS
+***********************/
+/* Gradient - Green */
+/************************
+    DEFAULTS
+************************/
+body {
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif; }
+
+/* Heading sizes */
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+/***********************
+    NAVIGATION 
+***********************/
+nav {
+  display: none; }
+
+/***********************
+    HEADER
+***********************/
+header {
+  width: 100%;
+  background-color: #8aa77a;
+  /* Fallback */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6f8f5d), to(#a6c097));
+  background-image: -webkit-linear-gradient(top, #6f8f5d, #a6c097);
+  background-image: -moz-linear-gradient(top, #6f8f5d, #a6c097);
+  background-image: -ms-linear-gradient(top, #6f8f5d, #a6c097);
+  background-image: -o-linear-gradient(top, #6f8f5d, #a6c097);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#6f8f5d', EndColorStr='#a6c097')";
+  margin: 0 auto; }
+  header .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    /***********************
+        NAVIGATION
+    ***********************/ }
+    header .container .row .logo {
+      width: 42%;
+      float: left; }
+      header .container .row .logo .companyName {
+        display: none; }
+      header .container .row .logo img {
+        width: 100%; }
+    header .container .dropdown {
+      background: #446332; }
+      header .container .dropdown .btn-primary {
+        width: 100%;
+        background: #446332;
+        border: none; }
+      header .container .dropdown ul {
+        width: 100%; }
+    header .container .btn-primary.active.focus, header .container .btn-primary.active:focus, header .container .btn-primary.active:hover, header .container .btn-primary:active.focus, header .container .btn-primary:active:focus, header .container .btn-primary:active:hover, header .container .open > .dropdown-toggle.btn-primary.focus, header .container .open > .dropdown-toggle.btn-primary:focus, header .container .open > .dropdown-toggle.btn-primary:hover {
+      background: #244412; }
+    header .container .banner {
+      display: none; }
+
+/***********************
+    INFO BOXES
+***********************/
+.container .row .info-boxes {
+  padding: 0;
+  margin: 0 auto; }
+  .container .row .info-boxes img {
+    opacity: .9;
+    width: 100%; }
+    .container .row .info-boxes img:hover {
+      opacity: 1; }
+
+/***********************
+    CONTENT
+***********************/
+main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0; }
+  main .container {
+    max-width: 1140px;
+    padding: 0 1em 1em;
+    margin: 0 auto; }
+    main .container .main-content {
+      padding-top: .5em;
+      padding-bottom: .5em; }
+      main .container .main-content p {
+        font-size: .8em; }
+
+/***********************
+    FOOTER
+***********************/
+footer {
+  background: #a6c097;
+  padding: 1em 0; }
+  footer p {
+    margin: 0 auto;
+    padding: 0; }
+  footer ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 12px; }
+    footer ul li {
+      float: left;
+      padding: .5em; }
+      footer ul li a {
+        color: #244412; }
+        footer ul li a:hover {
+          color: #244412; }
+  footer .contact .contact-heading {
+    font-size: 18px; }
+  footer .contact p {
+    font-size: 14px; }
+    footer .contact p a {
+      color: #244412; }
+      footer .contact p a:hover {
+        color: #244412; }
+  footer .copyright {
+    padding: .5em 0;
+    border-top: 1px solid #88a776; }
+    footer .copyright p {
+      text-align: center;
+      font-size: 12px; }
+      footer .copyright p a {
+        color: #244412; }
+        footer .copyright p a:hover {
+          color: #244412; }
+
+/***********************
+    MEDIA QUERIES
+***********************/
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* navigation */
+  nav {
+    display: block;
+    background: #446332;
+    border-bottom: 2px solid #244412; }
+    nav .container .row {
+      /* navigation */
+      /* /navigation */ }
+      nav .container .row #wrap {
+        height: 25px;
+        margin: 0;
+        /* Ensures there is no space between sides of the screen and the menu */
+        z-index: 99;
+        /* Makes sure that your menu remains on top of other page elements */
+        position: relative;
+        background-color: #446332; }
+        nav .container .row #wrap .navbar {
+          /* ul element */
+          height: 25px;
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          /* Ensures that the menu doesnΓÇÖt affect other elements */
+          right: 0; }
+          nav .container .row #wrap .navbar li {
+            height: auto;
+            width: 90px;
+            /* Each menu item is 150px wide */
+            float: left;
+            /* This lines up the menu items horizontally */
+            text-align: center;
+            /* All text is placed in the center of the box */
+            list-style: none;
+            /* Removes the default styling (bullets) for the list */
+            font: normal bold 12px/1.2em Arial, Verdana, Helvetica;
+            padding: 0;
+            margin: 0;
+            background-color: #446332; }
+            nav .container .row #wrap .navbar li ul {
+              display: none;
+              /* Hides the drop-down menu */
+              height: auto;
+              margin: 0;
+              /* Aligns drop-down box underneath the menu item */
+              padding: 0;
+              /* Aligns drop-down box underneath the menu item */ }
+              nav .container .row #wrap .navbar li ul li {
+                background-color: #446332; }
+                nav .container .row #wrap .navbar li ul li a {
+                  border-left: 1px solid #446332;
+                  border-right: 1px solid #a5bf96;
+                  border-top: 1px solid #446332;
+                  border-bottom: 1px solid #a5bf96; }
+          nav .container .row #wrap .navbar li:hover ul {
+            display: block;
+            /* Displays the drop-down box when the menu item is hovered over */ }
+          nav .container .row #wrap .navbar a {
+            padding: 5px 0;
+            /* Adds a padding on the top and bottom so the text appears centered vertically */
+            border-left: 1px solid #446332;
+            /* Creates a border in a slightly lighter shade of blue than the background.  Combined with the right border, this creates a nice effect. */
+            border-right: 1px solid #a5bf96;
+            /* Creates a border in a slightly darker shade of blue than the background.  Combined with the left border, this creates a nice effect. */
+            text-decoration: none;
+            /* Removes the default hyperlink styling. */
+            color: white;
+            /* Text color is white */
+            display: block; }
+          nav .container .row #wrap .navbar li:hover, nav .container .row #wrap .navbar a:hover {
+            background-color: #a5bf96;
+            color: #244412; }
+
+  /* header */
+  header .container .row .logo {
+    display: block;
+    padding-bottom: .5em; }
+    header .container .row .logo .companyName {
+      display: none; }
+    header .container .row .logo img {
+      width: 75%; }
+  header .container .banner {
+    display: block;
+    padding: .1em;
+    border: 1px solid #446332; }
+  header .container .dropdown {
+    display: none; } }
+/* Footer */
+
+/*# sourceMappingURL=custom.css.map */
